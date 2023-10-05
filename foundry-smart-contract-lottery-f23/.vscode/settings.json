@@ -1,0 +1,18 @@
+{
+    "editor.formatOnSave": true,
+    // "[solidity]": {
+    //     "editor.defaultFormatter": "JuanBlanco.solidity"
+    // },
+    // "solidity.formatter": ,
+    "solidity.validationDelay": 0,
+    "solidity.compileUsingRemoteVersion": "latest",
+    "solidity.packageDefaultDependenciesContractsDirectory": "src",
+    "solidity.packageDefaultDependenciesDirectory": "lib",
+    "solidity.enabledAsYouTypeCompilationErrorCheck": true,
+    "solidity.linter": "solhint",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+}
