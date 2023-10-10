@@ -1,0 +1,13 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+
+remappings = [
+    "@openzeppelin=lib/openzeppelin-contracts/",
+    "@foundry-devops=lib/foundry-devops",
+]
+
+# 6275
+ignored_error_codes = [6275]
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
