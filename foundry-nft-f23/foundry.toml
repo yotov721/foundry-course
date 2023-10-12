@@ -8,6 +8,9 @@ remappings = [
     "@foundry-devops=lib/foundry-devops",
 ]
 
+fs_permissions = [{ access = "read", path = "./img/dynamicNft/" }]
+
 # 6275
 ignored_error_codes = [6275]
+
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options

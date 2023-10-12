@@ -3,8 +3,8 @@
 pragma solidity ^0.8.17;
 
 import {Test} from "forge-std/Test.sol";
-import {DeployFriendsNFT} from "../script/DeployFriendsNFT.s.sol";
-import {FriendsNFT} from "../src/FriendsNFT.sol";
+import {DeployFriendsNFT} from "../../script/DeployFriendsNFT.s.sol";
+import {FriendsNFT} from "../../src/FriendsNFT.sol";
 
 contract FriendsNFTTest is Test {
     DeployFriendsNFT deployer;
