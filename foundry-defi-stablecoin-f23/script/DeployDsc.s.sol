@@ -20,7 +20,7 @@ contract DeployDsc is Script {
         tokenAddresses = [weth, wbtc];
         priceFeedAddresses = [wethUsdPriceFeed, wbtcUsdPriceFeed];
 
-        vm.startBroadcast();
+        vm.startBroadcast(deployerKey);
         StableCoin stableCoin = new StableCoin();
         DSCEngine engine = new DSCEngine(tokenAddresses, priceFeedAddresses, address(stableCoin));
 

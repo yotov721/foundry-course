@@ -28,6 +28,7 @@ import {StableCoin} from "./StableCoin.sol";
 import {ReentrancyGuard} from "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+import {OracleLib} from "./libraries/OracleLib.sol";
 
 /*
  * Designed to be as minimal as possible and have tokens maintain 1 token == $1 peg
@@ -52,6 +53,11 @@ contract DSCEngine is ReentrancyGuard {
     error DSCEngine__MintingFailed();
     error DSCEngine__HealthFactorOk();
     error DSCEngine__HealthFactorNotImproved();
+
+    ///////////////////
+    // Types
+    ///////////////////
+    using OracleLib for AggregatorV3Interface;
 
     ///////////////////
     // State Variables
@@ -314,7 +320,7 @@ contract DSCEngine is ReentrancyGuard {
         // price of ETH
         // $2000 / ETH. $1000 = 0.5 ETH
         AggregatorV3Interface priceFeed = AggregatorV3Interface(s_priceFeeds[token]);
-        (, int256 price,,,) = priceFeed.latestRoundData();
+        (, int256 price,,,) = priceFeed.staleCheckLatestRoundData();
 
         return ((usdAmountInWei * PRECISION) / (uint256(price) * ADDITIONAL_FEED_PRECISION));
     }
@@ -367,5 +373,13 @@ contract DSCEngine is ReentrancyGuard {
         returns (uint256)
     {
         return _calculateHealthFactor(totalDscMinted, collateralValueInUsd);
+    }
+
+    function getCollateralTokens() external view returns (address[] memory) {
+        return s_collateralTokens;
+    }
+
+    function getCollateralTokenPriceFeed(address token) external view returns (address) {
+        return s_priceFeeds[token];
     }
 }
