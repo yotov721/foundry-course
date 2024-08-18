@@ -43,3 +43,15 @@
 [submodule "foundry-upgradable-contracts-f23/lib/foundry-devops"]
 	path = foundry-upgradable-contracts-f23/lib/foundry-devops
 	url = https://github.com/Cyfrin/foundry-devops
+[submodule "foundry-merkle-airdrop-f24/lib/forge-std"]
+	path = foundry-merkle-airdrop-f24/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "foundry-merkle-airdrop-f24/lib/openzeppelin-contracts"]
+	path = foundry-merkle-airdrop-f24/lib/openzeppelin-contracts
+	url = https://github.com/openzeppelin/openzeppelin-contracts
+[submodule "foundry-merkle-airdrop-f24/lib/murky"]
+	path = foundry-merkle-airdrop-f24/lib/murky
+	url = https://github.com/dmfxyz/murky
+[submodule "foundry-merkle-airdrop-f24/lib/foundry-devops"]
+	path = foundry-merkle-airdrop-f24/lib/foundry-devops
+	url = https://github.com/cyfrin/foundry-devops
