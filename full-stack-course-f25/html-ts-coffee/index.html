@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <title>Buy a coffee</title>
+
+    <body>
+        <button id="connectButton">Connect</button>
+        <button id="balanceButton">getBalance</button>
+        <button id="withdrawButton">Withdraw</button>
+        <form>
+            <label for="ethAmount">ETH Amount</label>
+            <input id="ethAmount" placeholder="0.1" />
+            <button type="button" id="fundButton">Buy Coffee</button>
+        </form>
+        <form>
+            <label for="funderAddress">Funder Address</label>
+            <input id="funderAddress" placeholder="0x..." />
+            <button type="button" id="getAddressFundedAmountButton">Get Funded Amount</button>
+        </form>
+    </body>
+
+    <script src="./index-ts.ts" type="module">
+    </script>
+</html>
