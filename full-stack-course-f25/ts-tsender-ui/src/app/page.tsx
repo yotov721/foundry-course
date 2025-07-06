@@ -1,10 +1,20 @@
-import { RainbowKitProvider, ConnectButton } from "@rainbow-me/rainbowkit"
-import AirdropForm
- from "@/components/AirdropForm";
+"use client"
+
+import HomeComponent from "@/components/HomeComponent";
+import { useAccount } from "wagmi";
+
 export default function Home() {
+  const { isConnected } = useAccount();
+
   return (
     <div>
-      <AirdropForm />
+      {!isConnected ? (
+        <div>Please connect your wallet</div>
+      ) : (
+        <div>
+          <HomeComponent />
+        </div>
+      )}
     </div>
   );
 }
